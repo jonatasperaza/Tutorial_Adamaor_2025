@@ -76,7 +76,8 @@ Para implementar seu servidor proxy, execute os procedimentos descritos a seguir
     - Navegue até *Audio*.
     - Desmarque *Enable Audio* para reduzir consumo de recursos.
     
-    `[IMAGEM: Desabilitando áudio]`
+    <img width="964" height="585" alt="image" src="https://github.com/user-attachments/assets/6b64efc4-86ec-4d5f-94e6-af4b194aa365" />
+
 
     **Configurando Suporte USB:**
     - Vá até a aba *USB*.
@@ -165,18 +166,19 @@ Para implementar seu servidor proxy, execute os procedimentos descritos a seguir
 
     <img width="806" height="704" alt="image" src="https://github.com/user-attachments/assets/0beb608d-e981-49fc-873f-f1a0edc6456f" />
 
-    <img width="637" height="567" alt="image" src="https://github.com/user-attachments/assets/0c088f7e-7ad4-4f0e-b843-44ff03e5c460" />
+    <img width="844" height="722" alt="image" src="https://github.com/user-attachments/assets/9dab6546-5227-4c4d-9cb5-35dc29cda4bb" />
+
 
 21. **Esquema de Particionamento Recomendado:**
 
 | **Ponto de Montagem** | **Tamanho** | **Opções de Segurança** |
 |----------------------|-------------|------------------------|
-| / | 5 GB | - |
+| / | 7 GB | - |
 | swap | 1 GB | - |
-| /home | 2 GB | nodev, nosuid, noexec |
-| /var/log | 1 GB | - |
-| /tmp | 1 GB | nodev, nosuid, noexec |
-| /data/nginx | 11 GB | nodev, nosuid, noexec |
+| /home | 4 GB | nodev, nosuid, noexec |
+| /var/log | 5 GB | - |
+| /var/tmp | 2 GB | nodev, nosuid, noexec |
+| /tmp | 2 GB | nodev, nosuid, noexec |
 
 22. **Função de Cada Partição:**
 
@@ -191,9 +193,10 @@ Para implementar seu servidor proxy, execute os procedimentos descritos a seguir
     
     **Partição /var/log:** Armazenamento de logs do sistema.
     
+    **Partição /var/tmp:** Armazenamento de logs do sistema.
+    
     **Partição /tmp:** Arquivos temporários com restrições de segurança.
     
-    **Partição /data/nginx:** Dados específicos do NGINX com proteções de segurança.
 
 **OBSERVAÇÃO:** As três primeiras partições (/, swap, /home) devem ser primárias, todas criadas no início do espaço disponível.
 
@@ -208,22 +211,26 @@ Para implementar seu servidor proxy, execute os procedimentos descritos a seguir
     - Finalize configuração da partição
     - Repita para todas as partições
     
-    `[IMAGEM: Seleção do espaço livre]`
-    `[IMAGEM: Criar nova partição]`
-    `[IMAGEM: Definição do tamanho]`
-    `[IMAGEM: Seleção do tipo de partição]`
-    `[IMAGEM: Posicionamento da partição]`
-    `[IMAGEM: Configuração "Usar como"]`
-    `[IMAGEM: Seleção do ponto de montagem]`
-    `[IMAGEM: Adição manual de ponto de montagem]`
-    `[IMAGEM: Configuração das opções de montagem]`
-    `[IMAGEM: Seleção das opções de segurança]`
+    <img width="853" height="740" alt="image" src="https://github.com/user-attachments/assets/5165253c-d140-4573-a90f-6737711b07ae" />
+    <img width="847" height="716" alt="image" src="https://github.com/user-attachments/assets/851cdbb4-2080-4fb9-b32f-063681d2c9e0" />
+    <img width="860" height="726" alt="image" src="https://github.com/user-attachments/assets/cc6589ec-dd97-439e-93b9-74f13bdf0860" />
+    <img width="850" height="723" alt="image" src="https://github.com/user-attachments/assets/747effa0-5d68-4f9e-b164-523e55358945" />
+    <img width="839" height="719" alt="image" src="https://github.com/user-attachments/assets/cb0d21e5-f7d1-40c9-b95b-64ecc2782a3b" />
+    <img width="858" height="737" alt="image" src="https://github.com/user-attachments/assets/28a68323-8adf-4d9e-bedc-1fad32e0bf46" />
+    <img width="860" height="737" alt="image" src="https://github.com/user-attachments/assets/cdca1d8b-af6e-4b06-98f5-c28258421a22" />
+    <img width="841" height="730" alt="image" src="https://github.com/user-attachments/assets/365aace5-3c0c-4196-8cce-4d134639ee3b" />
+    <img width="847" height="714" alt="image" src="https://github.com/user-attachments/assets/0ddeb693-be92-4bc6-a8d3-ef5d870bf9e8" />
 
 24. **Confirmação das Alterações:**
     - Revise todas as configurações de particionamento.
     - Confirme as alterações no disco.
     
-    `[IMAGEM: Visão geral das partições configuradas]`
+    <img width="842" height="710" alt="image" src="https://github.com/user-attachments/assets/c39d928a-de63-40bc-abcb-2b4ecad7d57e" />
+    <img width="841" height="709" alt="image" src="https://github.com/user-attachments/assets/51ddb86f-187c-41a0-a7c7-13a6e12ee994" />
+    <img width="847" height="722" alt="image" src="https://github.com/user-attachments/assets/6dab4240-9582-4a4a-8e31-8da69e8dd60c" />
+
+
+
 
 ## Finalização da Instalação
 
@@ -233,30 +240,40 @@ Para implementar seu servidor proxy, execute os procedimentos descritos a seguir
     - Selecione o espelho *debian.c3sl.ufpr.br* da UFPR.
     - Deixe campo de proxy HTTP vazio.
     
-    `[IMAGEM: Configuração de mídias adicionais]`
-    `[IMAGEM: Seleção do país Brasil]`
-    `[IMAGEM: Seleção do mirror da UFPR]`
-    `[IMAGEM: Campo proxy HTTP vazio]`
+    <img width="840" height="715" alt="image" src="https://github.com/user-attachments/assets/6a3ca6b2-e56a-4b75-9244-a782d79c6337" />
+
+
+    <img width="841" height="722" alt="image" src="https://github.com/user-attachments/assets/c837dc9f-96a4-4ff0-a59f-3f11444f45e4" />
+
+    <img width="840" height="718" alt="image" src="https://github.com/user-attachments/assets/10eac226-f684-4059-ad96-4d794a0a8441" />
+
+    `<img width="835" height="715" alt="image" src="https://github.com/user-attachments/assets/90cc8dad-19da-49a2-9672-aff12a434e8f" />
+
 
 26. **Opções Adicionais:**
     - Decline participação no Popularity Contest.
     - Desmarque todos os pacotes extras para manter sistema enxuto.
     
-    `[IMAGEM: Popularity Contest - Não]`
-    `[IMAGEM: Seleção de pacotes - todos desmarcados]`
+    <img width="840" height="721" alt="image" src="https://github.com/user-attachments/assets/fae5bd44-704e-4aa4-bd43-fc242f56e21a" />
+
+    <img width="842" height="714" alt="image" src="https://github.com/user-attachments/assets/01587252-de73-4df2-8b40-afe771f734d6" />
+
 
 27. **Instalação do GRUB:**
     - Confirme instalação do GRUB bootloader.
     - Selecione o disco correto para instalação.
     
-    `[IMAGEM: Confirmação instalação GRUB]`
-    `[IMAGEM: Seleção do disco para GRUB]`
+    <img width="834" height="713" alt="image" src="https://github.com/user-attachments/assets/51f56c59-61ca-47dc-a089-527126f6a422" />
+
+    <img width="842" height="721" alt="image" src="https://github.com/user-attachments/assets/c9a2ba64-d2e8-4a83-a54c-0d5837c1780c" />
+
 
 28. **Finalização:**
     - Clique em "Continuar" para concluir instalação.
     - Sistema reiniciará automaticamente.
     
-    `[IMAGEM: Instalação concluída]`
+    <img width="846" height="722" alt="image" src="https://github.com/user-attachments/assets/e00c90d9-f7fc-487a-8588-7cf5654dfe63" />
+
 
 ## Primeiro Acesso ao Sistema
 
@@ -266,9 +283,12 @@ Para implementar seu servidor proxy, execute os procedimentos descritos a seguir
     - Digite a senha correspondente.
     - Sistema estará pronto para configuração do servidor proxy.
     
-    `[IMAGEM: Tela de login - usuário]`
-    `[IMAGEM: Tela de login - senha]`
-    `[IMAGEM: Sistema logado e pronto]`
+    <img width="816" height="692" alt="image" src="https://github.com/user-attachments/assets/36bcf7e5-eb91-4f48-90cc-6a0da0ef8e8a" />
+
+    <img width="823" height="693" alt="image" src="https://github.com/user-attachments/assets/2ecee7c3-548a-4b4a-9474-9f23e2743caa" />
+
+    <img width="821" height="691" alt="image" src="https://github.com/user-attachments/assets/51d63b42-5155-413e-a6ba-4907ae8efb39" />
+
 
 ## Configuração da Interface de Rede
 
@@ -277,13 +297,15 @@ Para implementar seu servidor proxy, execute os procedimentos descritos a seguir
     - No VirtualBox, com a VM desligada, acesse *Settings* > *Network*.
     - Verifique se o *Adapter 1* está habilitado e configurado como *NAT*.
     
-    `[IMAGEM: Configuração de rede NAT no VirtualBox]`
+    <img width="986" height="661" alt="image" src="https://github.com/user-attachments/assets/906aa32b-ef62-4d25-ba47-47a0e39b5d9c" />
+
 
 31. **Acessando o Sistema como Root:**
     - Faça login com o usuário root para ter privilégios administrativos.
     - Digite `root` como usuário e a senha `aluno`.
     
-    `[IMAGEM: Login como root]`
+    <img width="819" height="679" alt="image" src="https://github.com/user-attachments/assets/1adbd8b7-c3ca-423f-b709-eda4d82a024a" />
+
 
 32. **Identificando a Interface de Rede:**
     - Execute o comando para listar as interfaces de rede disponíveis:
@@ -292,7 +314,8 @@ Para implementar seu servidor proxy, execute os procedimentos descritos a seguir
     ```
     - Identifique a interface de rede (geralmente será `enp0s3` em máquinas virtuais VirtualBox).
     
-    `[IMAGEM: Resultado do comando ip addr show]`
+    <img width="865" height="708" alt="image" src="https://github.com/user-attachments/assets/fa8cb04b-2d49-442b-b984-c1a91dccb646" />
+
 
 33. **Editando o Arquivo de Configuração de Rede:**
     - Abra o arquivo de configuração de interfaces de rede:
@@ -300,7 +323,8 @@ Para implementar seu servidor proxy, execute os procedimentos descritos a seguir
     nano /etc/network/interfaces
     ```
     
-    `[IMAGEM: Comando para editar interfaces]`
+    <img width="826" height="705" alt="image" src="https://github.com/user-attachments/assets/1fb414db-56bb-4376-945f-83083ce24a8c" />
+
 
 34. **Configurando a Interface enp0s3:**
     - No editor nano, localize ou adicione as seguintes linhas para configurar a interface enp0s3:
@@ -313,14 +337,16 @@ Para implementar seu servidor proxy, execute os procedimentos descritos a seguir
       - `auto enp0s3`: Faz com que a interface seja ativada automaticamente durante o boot
       - `iface enp0s3 inet dhcp`: Configura a interface para obter IP automaticamente via DHCP
     
-    `[IMAGEM: Arquivo de configuração de interfaces editado]`
+    <img width="835" height="701" alt="image" src="https://github.com/user-attachments/assets/2b1ca37d-756c-4dbc-a6b5-b2c993bc638e" />
+
 
 35. **Salvando as Alterações:**
     - Pressione `Ctrl + X` para sair do nano
     - Digite `Y` para confirmar as alterações
     - Pressione `Enter` para salvar o arquivo
     
-    `[IMAGEM: Salvando arquivo no nano]`
+    <img width="846" height="690" alt="image" src="https://github.com/user-attachments/assets/d239da67-ae37-49a8-a58c-1bded9354b6b" />
+
 
 36. **Reiniciando o Serviço de Rede:**
     - Execute os comandos para reiniciar a configuração de rede:
@@ -332,7 +358,8 @@ Para implementar seu servidor proxy, execute os procedimentos descritos a seguir
     ifdown enp0s3 && ifup enp0s3
     ```
     
-    `[IMAGEM: Comandos de reinicialização da rede]`
+    <img width="827" height="701" alt="image" src="https://github.com/user-attachments/assets/010a2f99-bf96-41e3-9fa7-928c65f7a1ac" />
+
 
 37. **Verificando a Configuração:**
     - Confirme se a interface recebeu um endereço IP:
@@ -344,8 +371,10 @@ Para implementar seu servidor proxy, execute os procedimentos descritos a seguir
     ping -c 4 8.8.8.8
     ```
     
-    `[IMAGEM: Verificação do IP da interface]`
-    `[IMAGEM: Teste de ping bem-sucedido]`
+    <img width="1017" height="789" alt="image" src="https://github.com/user-attachments/assets/fac5df59-36dd-47ee-bcaf-bc28a6703971" />
+
+    <img width="997" height="785" alt="image" src="https://github.com/user-attachments/assets/6062a8be-e663-4c53-a9d3-0552d082fa52" />
+
 
 38. **Configuração de DNS (Opcional):**
     - Se necessário, configure servidores DNS editando o arquivo:
@@ -358,7 +387,8 @@ Para implementar seu servidor proxy, execute os procedimentos descritos a seguir
     nameserver 8.8.4.4
     ```
     
-    `[IMAGEM: Configuração de DNS]`
+   <img width="995" height="777" alt="image" src="https://github.com/user-attachments/assets/5cba7731-8e68-49e4-90da-3808cd70df4a" />
+
 
 39. **Teste Final de Conectividade:**
     - Teste a resolução de nomes:
@@ -367,14 +397,11 @@ Para implementar seu servidor proxy, execute os procedimentos descritos a seguir
     ```
     - Se o ping for bem-sucedido, a configuração de rede está completa e funcional.
     
-    `[IMAGEM: Ping para google.com bem-sucedido]`
+    <img width="1006" height="779" alt="image" src="https://github.com/user-attachments/assets/6d4e0c0d-209b-44c9-acf5-e322385aee1a" />
+
 
 **Observações Importantes:**
 - A configuração NAT no VirtualBox permite que a VM acesse a internet através da conexão do host
 - O DHCP fornecerá automaticamente IP, gateway e DNS para a interface
 - A interface `enp0s3` é o padrão para o primeiro adaptador de rede em VMs VirtualBox
 - Esta configuração é ideal para ambientes de desenvolvimento e teste
-
-Com a interface de rede configurada e funcionando, o sistema está pronto para a instalação e configuração do servidor proxy.
-
-Este guia estabelece a base sólida para implementação de um servidor proxy Debian 12, fornecendo um ambiente seguro e otimizado através do particionamento personalizado e configurações de segurança implementadas.
